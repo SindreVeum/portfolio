@@ -5,14 +5,24 @@ import App from '../App'
 describe('App', () => {
   it('renders without crashing', () => {
     render(<App />)
-    expect(screen.getByText(/Portfolio/i)).toBeInTheDocument()
+    // Check that Portfolio text exists (there are multiple instances)
+    expect(screen.getAllByText(/Portfolio/i)).toHaveLength(2)
   })
 
   it('renders navigation links', () => {
     render(<App />)
-    expect(screen.getByText(/Home/i)).toBeInTheDocument()
-    expect(screen.getByText(/About/i)).toBeInTheDocument()
-    expect(screen.getByText(/Projects/i)).toBeInTheDocument()
-    expect(screen.getByText(/Contact/i)).toBeInTheDocument()
+    // Use getByRole for navigation links to be more specific
+    expect(screen.getByRole('link', { name: /Home/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /About/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Projects/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Contact/i })).toBeInTheDocument()
+  })
+
+  it('renders header with logo link', () => {
+    render(<App />)
+    // Check for the header logo link specifically
+    const logoLink = screen.getByRole('link', { name: /Portfolio/i })
+    expect(logoLink).toBeInTheDocument()
+    expect(logoLink).toHaveAttribute('href', '/')
   })
 }) 

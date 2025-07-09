@@ -5,8 +5,6 @@ module.exports = {
     'eslint:recommended',
     '@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -17,7 +15,7 @@ module.exports = {
       jsx: true
     }
   },
-  plugins: ['react-refresh', 'react', '@typescript-eslint'],
+  plugins: ['react-refresh', '@typescript-eslint'],
   settings: {
     react: {
       version: 'detect'
@@ -32,6 +30,5 @@ module.exports = {
       argsIgnorePattern: '^_',
       varsIgnorePattern: '^_'
     }],
-    'react/prop-types': 'off'
   },
 } 

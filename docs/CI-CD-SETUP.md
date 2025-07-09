@@ -1,5 +1,7 @@
 # CI/CD Setup with GitHub Actions
 
+> **Troubleshooting Tip:** Always run `npm run lint`, `npm run test`, and `npm run build` from the `frontend/` directory, not the project root. This avoids ESLint config resolution errors (see https://stackoverflow.com/questions/65675771/eslint-couldnt-find-the-config-prettier-typescript-eslint-after-relocating).
+
 This guide explains how to set up a complete CI/CD pipeline using GitHub Actions for your portfolio project.
 
 ## 🎯 What This CI/CD Pipeline Does

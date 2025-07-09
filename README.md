@@ -2,6 +2,8 @@
 
 A modern, responsive personal portfolio built with React, deployed on Azure with CI/CD pipeline.
 
+> **Note:** Always run `npm run lint`, `npm run test`, and `npm run build` from the `frontend/` directory, not the project root. This ensures ESLint and other tools resolve configs and plugins correctly.
+
 ## 🚀 Features
 
 - **Modern React Frontend** with TypeScript
